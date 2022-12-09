@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+/* Color Paletter for the whole website
+#818D92 - Body Background
+#586A6A - Main Div Background
+#B9A394 - Header
+#D4C5C7 - Player Computer Div Background
+#DAD4EF - Font Color
+
+
+*/
+
+* {
+    font-family: Aboreto, 'Times New Roman', Times, serif;
+   
+}
+
+body {
+    margin: 0;
+    /* min-height: 100vh; */
+    display: flex;
+    background-color: #818D92;
+}
+
+/* SECTION 1: Main Div: contains header, player&computerDiv: contains playerDiv, computerDiv */
+.mainBody {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     background-color: #586A6A;
+     align-items: center;
+     height: 90vh;
+     width: auto;
+     margin: 30px;
+     border-radius: 30px;
+     color: #DAD4EF;
+}
+
+
+/* SECTION 2: Header Divs */
+.header{
+
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #B9A394;
+width: 100%;
+border-top-right-radius: 30px;
+border-top-left-radius: 30px;
+}
+
+.header2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+}
+
+#secondHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+}
+
+
+
+/* SECTION 3: Player and Computer Container of Divs*/
+.pcDiv{
+ background-color: #D4C5C7;
+ flex: 1;
+ display: flex;
+ height: 50px;
+ width: 80vw;
+ margin: 10px;
+ justify-content: space-between;
+ 
+
+}
+
+
+
+/* SECTION 4: Player Div and other contents */
+.playerDiv{
+ display: flex;
+ flex-direction: column;
+}
+
+.playerBox {
+
+}
+
+ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+}
+
+a {
+ text-decoration: none;
+ color: #818D92;
+}
+
+
+
+/* SECTION 5: Player and Computer's Similar Divs and other*/
+.innerHeader {
+    color: #586A6A;
+}
+
+.playerDiv, .computerDiv{
+flex: 1;
+display: flex;
+align-items: center;
+border: 2px solid;
+}
+
+.playerImg, .compImg {
+    color: #818D92;
+}
+
+
+/* SECTION 6: Computer Divs and other contents*/
+.computerDiv {
+display: flex;
+flex-direction: column;
+}
+
+.computerBox {
+
+}
+
+.compImg {
+
+}
+
+#rock {
+
+}
+
+#paper {
+
+}
+
+#scissor {
+
+}
