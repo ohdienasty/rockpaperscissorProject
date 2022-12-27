@@ -6,37 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Rock, Paper, Scissors Game!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="/valleybarberProject/gallery/icon.png">
-    <script src="function.js"></script>
+    <link rel="icon" href="/rockpaperscissorProject/gallery/rpsICON.png">
+    
+    
+    
 </head>
 <body>
     <div class="mainBody">
-        <div class="header"><h1>Rock, Paper, Scissor!</h1></div>
-        <div class="header2">
-            <h1 id="secondHeader">Player</h1>
-            <h1 id="secondHeader">VS</h1>
-            <h1 id="secondHeader">Computer</h1>
-        </div>
+        <div class="header"><h1 id="header1">Let's Play Rock, Paper, Scissors!</h1></div>      
+        <div class="round"><h1 id="here"><input type="text" id="txtBox" name="fname" placeholder="Enter your name here <hit enter>"></h1></div>
         <div class="pcDiv">
             <div class="playerDiv">
-                <div class="innerHeader"><h1>Player</h1></div>
+                <div class="innerHeader"><h1 id="playerName">Unknown</h1></div>
                  <div class="playerBox">
-                     <ul>
-                        <li><a href="#" class="classImg">Rock</a></li>
-                        <li><a href="#" class="classImg">Paper</a></li>
-                        <li><a href="#" class="classImg">Scissors</a></li>
-                     </ul>
+                     <button class="classImg"><img src="/rockpaperscissorProject/gallery/rock/rockLS.png" id="rock"></button>
+                     <button class="classImg"><img src="/rockpaperscissorProject/gallery/paper/paperLS.png" id="paper"></button>
+                     <button class="classImg"><img src="/rockpaperscissorProject/gallery/scissor/scissorLS.png" id="scissors"></button>
+                     
+                     <div class="scoreBoard"><h1 id="playerScore">Score: </h1></div>
                  </div>
             </div>
             <div class="computerDiv">
                 <div class="innerHeader"><h1>Computer</h1></div>
                 <div class="computerBox">
-                     <div class="compImg" id="rock">Rock</div>
-                     <div class="compImg" id="paper">Paper</div>
-                     <div class="compImg" id="scissor">Scissors</div>
+                     <div class="classImg" id="cRck"><img src="/rockpaperscissorProject/gallery/rock/rockRS.png"></div>
+                     <div class="classImg" id="cPpr"><img src="/rockpaperscissorProject/gallery/paper/paperRS.png"></div>
+                     <div class="classImg" id="cScsr"><img src="/rockpaperscissorProject/gallery/scissor/scissorRS.png"></div>
+                     
+                     <div class="scoreBoard"><h1 id="compScore">Score: </h1></div>
                 </div>
             </div>
         </div>
+        <div class="gameResult"><img src="gallery/refresh1.png" id="resetBtn"><h1 id="result">GAME MATCH</h1></div>
     </div>
+
+<script src="function.js"></script>
 </body>
 </html>

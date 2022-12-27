@@ -15,11 +15,19 @@
    
 }
 
+img {
+    height: 100px;
+    width: auto;
+}
 body {
     margin: 0;
     /* min-height: 100vh; */
     display: flex;
-    background-color: #818D92;
+    background-image: url(/rockpaperscissorProject/gallery/BlackBG.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    flex-wrap: wrap;
 }
 
 /* SECTION 1: Main Div: contains header, player&computerDiv: contains playerDiv, computerDiv */
@@ -27,57 +35,77 @@ body {
      flex: 1;
      display: flex;
      flex-direction: column;
-     background-color: #586A6A;
+     flex-shrink: 0;
      align-items: center;
      height: 90vh;
      width: auto;
-     margin: 30px;
+     margin: 12px;
      border-radius: 30px;
-     color: #DAD4EF;
+     color: #7d8087;
 }
 
 
 /* SECTION 2: Header Divs */
 .header{
-
+animation: slideDown .8s ease forwards 0s;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: #B9A394;
+background-color: #32343bbd;
+color: #7d8087;
 width: 100%;
-border-top-right-radius: 30px;
 border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+
 }
 
-.header2 {
+.round {
+    animation: slideUp .8s ease forwards;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    height: 10vh;
-    width: 100%;
+    background-color: #4e5057bd;
+    color: hwb(0 100% 0%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+   
 }
 
-#secondHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 50px;
+input {
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    height: 35px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+input:focus::placeholder{
+    color: transparent;
 }
 
+input::placeholder{
+    color: #586A6A;
+    transition: color 0.5s ease;
+}
+
+#submitBtn {
+    border-radius: 30px;
+    border: none;
+}
 
 
 /* SECTION 3: Player and Computer Container of Divs*/
 .pcDiv{
- background-color: #D4C5C7;
  flex: 1;
- display: flex;
- height: 50px;
- width: 80vw;
- margin: 10px;
+ display: none;
+ width: 100%;
  justify-content: space-between;
- 
-
+ margin: 5px;
 }
 
 
@@ -88,38 +116,59 @@ border-top-left-radius: 30px;
  flex-direction: column;
 }
 
-.playerBox {
-
+.playerBox button{
+    background-color: transparent;
+    border: transparent;
+    filter:  opacity(100%);
+    transition-duration: 0.6s;
+}
+.playerBox button:hover{
+    filter: opacity(30%);
+    
 }
 
-ul {
- list-style: none;
- padding: 0;
- margin: 0;
-}
 
-a {
- text-decoration: none;
- color: #818D92;
-}
 
 
 
 /* SECTION 5: Player and Computer's Similar Divs and other*/
 .innerHeader {
-    color: #586A6A;
+    color: #c4c5c7;
+}
+
+.innerHeader, .classImg {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .playerDiv, .computerDiv{
 flex: 1;
 display: flex;
 align-items: center;
-border: 2px solid;
+background-color: #3f4148;
+border-radius: 30px;
+flex-shrink: 0;
+margin: 30px;
+
 }
 
-.playerImg, .compImg {
-    color: #818D92;
+button .classImg, div .classImg {
+    padding: 10px;
+    
 }
+
+.scoreBoard {
+    display: flex;
+    color: #7d8087;
+    justify-content: center;
+    
+}
+
+/* This area is for the gap from .round, .pcDiv, .gameWinner */
+/* .round, .pcDiv, .gameWinner {
+    display: flex;
+    gap: 300px;
+} */
 
 
 /* SECTION 6: Computer Divs and other contents*/
@@ -128,22 +177,162 @@ display: flex;
 flex-direction: column;
 }
 
-.computerBox {
+
+#cRck, #cPpr, #cScsr {
+filter: blur(8px);
 
 }
 
-.compImg {
+/* SECTION 7: Game Winner Div */
+.gameResult {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff2b;
+    color:hwb(0 100% 0%);
+    width: 100%;
+    border-radius: 30px;
+    
+    
+}
+/* SECTION 8: Restart Game Button */
 
+.gameResult img {
+    height: 80px;
+    width: auto;
+}
+#resetBtn {
+    display: none;
+    background-color: transparent;
+    border: transparent;
+    filter: brightness(200%) sepia(100%) ;
+    transition-duration: 0.8s;
+    animation: rotate 2s linear infinite;
+    
 }
 
-#rock {
 
+#resetBtn:hover {
+    filter: opacity(30%);
 }
 
-#paper {
-
+/* Animation Section */
+@keyframes slideDown{
+    0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(300px);
+      }
 }
 
-#scissor {
+@keyframes slideUp {
+    0% {
+      transform: translateY(500px);
+    }
+    100% {
+      transform: translateY(300px);
+    }
+}
 
+@keyframes slideDown1{
+    0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(300px);
+      }
+}
+
+@keyframes slideUp1{
+    0% {
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}
+@keyframes slideDown2{
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(300px);
+    }
+}
+
+@keyframes slideLeft{
+    0% {
+        transform: translateX(-800px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+}
+
+@keyframes slideRight {
+    0% {
+      transform: translateX(800px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+@keyframes shake {
+    0% {
+      transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-5px);
+      }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+      }  
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+  
+@keyframes blurEffects1 {
+    0% {
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(8px);
+    }
+}
+
+@keyframes blurEffects2 {
+    0% {
+        transition:filter: blur(8px);
+    }
+    100%{
+        filter: blur(0px);
+    }
+}
+
+@keyframes pop-in {
+    0% { opacity: 0;transform: scale(0.4); }
+    100% { opacity: 1; transform: scale(1); }
+    }
+    
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  /* 50% {
+    transform: rotate(120deg)
+  }
+  75% {
+    transform: rotate(240deg)
+  } */
+  100% {
+    transform: rotate(360deg)
+  }
 }
